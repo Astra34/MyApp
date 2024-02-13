@@ -134,7 +134,6 @@ function App() {
     </>
   );
 
-
   const renderHomePage = () => (
     <>
       {!showPrompt && (
