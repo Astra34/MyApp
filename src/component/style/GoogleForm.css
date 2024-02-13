@@ -1,0 +1,49 @@
+.Component{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height:25%;
+    bottom: 0px;
+}
+.Or{
+    position: absolute;
+    top: 2px;
+}
+.Component::before{
+    top: 12px;
+    left: 5%;
+}
+.Component::before,
+.Component::after{
+    position: absolute;
+    top: 12px;
+    right: 5%;
+    content: '';
+    background-color:rgb(189, 186, 186);
+    width: 40%;
+    height: 1.5px;
+}
+
+.google{
+    position: relative;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: black;
+    border: 1px solid rgb(211, 210, 210);
+    width: 80%;
+    height: 30%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.google-icon{
+    position: relative;
+    top: 1%;
+    right: 5%;
+    width: 25px;
+    
+}

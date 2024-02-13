@@ -1,0 +1,26 @@
+.boxProfil{  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    background-color: red;
+    flex-grow: 1;
+}
+
+.titleProfil{
+    position: relative;
+    display:flex;
+    width: 70%;
+    height: 20%;
+    background-color: wheat;
+}
+
+.infoProfil{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 70%;
+    background-color: bisque;
+}

@@ -1,0 +1,220 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.Wrapper_box{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 29%;
+    height: 85%;
+    border-radius: 20px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 60%;
+}
+.message {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    border-radius: 20px 20px 0px 0px;
+    padding: 0px 50px 0px 30px;
+    transform: translateY(-100%);
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+
+.activeError {
+    animation-name: slideAndChangeColorToRed;
+}
+
+@keyframes slideAndChangeColorToRed {
+    0% {
+        transform: translateY(-100%);
+        background-color: red;
+    }
+    25%,75% {
+        transform: translateY(0%);
+        background-color: red;
+    }
+    100% {
+        transform: translateY(-100%);
+        background-color: red;
+    }
+}
+
+.activeSuccessful {
+    animation-name: slideAndChangeColorToGreen;
+}
+
+@keyframes slideAndChangeColorToGreen {
+    0% {
+        transform: translateY(-100%);
+        background-color: green;
+    }
+    25%,75% {
+        transform: translateY(0%);
+        background-color: green;
+    }
+    100% {
+        transform: translateY(-100%);
+        background-color: green;
+    }
+}
+
+
+.close{
+    z-index: 2;
+    position: absolute;
+    top: 5px;
+    right: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: transparent;
+    transition: 0.7s;
+}
+.close:hover{
+    background-color: rgba(172, 165, 165, 0.468);
+}
+
+.close:before,
+.close:after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height:2px;
+    background-color: black;
+    transform: rotate(45deg);
+}
+.close:after{
+    transform: rotate(-45deg);
+}
+
+.Title{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 150%;
+    margin-top: 15%;
+    margin-bottom: 5%;
+}
+
+.Input{
+    position: relative;
+    display: flex;
+    width: 80%;
+    height: 15%;
+    margin-bottom: 10px;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 40px;
+    border: 1px solid rgb(211, 210, 210);
+    border-radius: 5px;
+}
+.activeBorderError{
+    border: 1px solid red
+}
+
+.Input:focus{
+    border: 1px solid #00acee;
+}
+
+.Veiw{
+    background-color: transparent;
+    border: none;
+    position: relative;
+    bottom:15%;
+    left: 35%;
+    width: 5%;
+    height: 5%;
+    cursor: pointer;
+    font-size:120%;
+}
+
+.button{
+    border: 1px solid rgb(211, 210, 210);
+    width: 80%;
+    height: 12%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.button.Login{
+    background-color: black;
+    color: white;
+}
+
+.button.Forgotten{
+    background-color: white;
+    color: black;
+}
+
+.Text{
+    position: relative;
+    top: 8%;
+    text-align: center;
+    width: 100%;
+    font-size: 100%;
+}
+.LinkButton{
+    background-color: transparent;
+    color: purple;
+    margin-left: 5px;
+    font-size: 100%;
+    cursor: pointer;
+    border: none;
+}
+.LinkButton:hover{
+    text-decoration:underline;
+    text-decoration-color: purple;
+}
+
+
+@media screen and (max-width:1024px) {
+    .Wrapper_box {
+        width: 60%;
+        height: 80%;
+    }
+    
+}
+
+@media screen and (max-width:750px) {
+    .Wrapper_box {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;      
+    }
+}
