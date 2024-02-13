@@ -24,7 +24,7 @@ export default function Login({setMessageErr, messageErr, formType, actionClick,
   return (
     <div className='Wrapper_box'>
     <p className={`message ${messageErr.success === null ? '' : messageErr.success ? 'activeSuccessful' : 'activeError'}`}>{messageErr.message}</p> 
-    <button className='close' alt="Fermer" onClick= {() => {ShowPrompt(); navigate('/'); handleClear()}} />
+    <button className='close' alt="Fermer" onClick= {() => {ShowPrompt(); navigate('/MyApp'); handleClear()}} />
       <>
         {change ? <h1 className="Title">Login to an account</h1> : <h1 className="Title">Create an account</h1>}
         <form className='box'>

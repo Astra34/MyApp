@@ -17,7 +17,7 @@ export default function Nav({authentication, logout, onLogin, onSignup}) {
                 <div className='Nav'>
                     <>
                         <span className='icon home'><BsFillHouseFill/></span>
-                        <button className='Nav-btn' onClick={() => navigate('/')}>Home</button>
+                        <button className='Nav-btn' onClick={() => navigate('/MyApp')}>Home</button>
                     </>
                     <>
                         <span className='icon shop'><BsCart3/></span>
@@ -29,7 +29,7 @@ export default function Nav({authentication, logout, onLogin, onSignup}) {
                     </>
                     <>  
                         <span className='icon profil'><BsPersonFill/></span>
-                        <button className='Nav-btn' onClick={() => navigate('/profile')}>Profil</button>
+                        <button className='Nav-btn' onClick={() => navigate('/MyApp/profile')}>Profil</button>
                     </>            
                 </div>
                 <div className='Auth'>

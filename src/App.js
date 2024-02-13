@@ -150,9 +150,9 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path = "/" element = {renderHomePage()} />
+          <Route path = "/MyApp" element = {renderHomePage()} />
           <Route path = "/profile" element = {renderProfilePage()} />
-          <Route path = "*" element={<Navigate to="/"/>} />
+          <Route path = "*" element={<Navigate to="/MyApp"/>} />
         </Routes>
       </Router>
     </>
