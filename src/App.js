@@ -24,6 +24,8 @@ function App() {
         const response = await axios.post(`${process.env.REACT_APP_API_URL}/check-auth`,{},{
           withCredentials: true  
         });
+
+        console.log(response, response.headers, response.headers['set-cookie'],response.data)
         setInfoUser(response.data.info);
         setAuthentication(response.data.success);
       } catch (err) {
