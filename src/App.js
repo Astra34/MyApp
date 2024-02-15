@@ -5,6 +5,9 @@ import Form from './component/authentication/Form';
 import Profil from './component/pages/Profile';
 import Nav from './component/Nav/Nav';
 
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = process.env.REACT_APP_API_URL;
+axios.defaults.withCredentials = true; 
+
 
 function App() {
   const [showPrompt, setShowPrompt] = useState(false);
