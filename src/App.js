@@ -5,8 +5,13 @@ import Form from './component/authentication/Form';
 import Profil from './component/pages/Profile';
 import Nav from './component/Nav/Nav';
 
-axios.defaults.headers.common['Access-Control-Allow-Origin'] = process.env.REACT_APP_API_URL;
-axios.defaults.withCredentials = true; 
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
 
 function App() {
   const [showPrompt, setShowPrompt] = useState(false);
@@ -27,7 +32,7 @@ function App() {
           withCredentials: true  
         });
 
-        console.log(response, response.headers, response.headers['set-cookie'],response.data)
+        axios.defaults.headers.common['sessionId'] = getCookie('sessionId');        
         setInfoUser(response.data.info);
         setAuthentication(response.data.success);
       } catch (err) {
@@ -67,6 +72,8 @@ function App() {
         console.log(response.data)
         if (response.data.success) {
           document.cookie = `sessionId=${response.data.sessionId}`;  
+          axios.defaults.headers.common['sessionId'] = response.data.sessionId;
+
           setShowPrompt(false);
           setInfoUser(response.data.info);
           setAuthentication(response.data.success);
