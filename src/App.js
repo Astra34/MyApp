@@ -66,6 +66,7 @@ function App() {
       if(endpoint === 'Login'){
         console.log(response.data)
         if (response.data.success) {
+          document.cookie = `sessionId=${res.data.sessionId}`;  
           setShowPrompt(false);
           setInfoUser(response.data.info);
           setAuthentication(response.data.success);
