@@ -6,6 +6,7 @@ import Profil from './component/pages/Profile';
 import Nav from './component/Nav/Nav';
 
 
+
 function App() {
   const [showPrompt, setShowPrompt] = useState(false);
   const [formType, setFormType] = useState(true);
@@ -65,6 +66,7 @@ function App() {
       if(endpoint === 'Login'){
         console.log(response.data)
         if (response.data.success) {
+         
           setShowPrompt(false);
           setToken(response.data.token);
           localStorage.setItem('token', token);
