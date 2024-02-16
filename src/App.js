@@ -17,15 +17,17 @@ function App() {
     username: '',
     password: ''
   });
+  const [token, setToken] = useState(localStorage.getItem('token') || null);
+
 
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await axios.post(`${process.env.REACT_APP_API_URL}/check-auth`,{},{
-          withCredentials: true  
+        const response = await axios.post(`${process.env.REACT_APP_API_URL}/check-auth`, null,{
+          headers: {
+            Authorization: `Bearer ${token}`}
         });
 
-        console.log(response, response.headers, response.headers['set-cookie'],response.data)
         setInfoUser(response.data.info);
         setAuthentication(response.data.success);
       } catch (err) {
@@ -58,13 +60,14 @@ function App() {
         email: values.email,
         password: values.password
       };
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/${endpoint}`, dataToSend, { 
-        withCredentials: true 
-      });
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/${endpoint}`, dataToSend, null);
+      
       if(endpoint === 'Login'){
         console.log(response.data)
         if (response.data.success) {
           setShowPrompt(false);
+          setToken(response.data.token);
+          localStorage.setItem('token', token);
           setInfoUser(response.data.info);
           setAuthentication(response.data.success);
           handleClear();
@@ -84,9 +87,10 @@ function App() {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/Logout`,{},{
-        withCredentials: true  
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/Logout`, null,{
+        headers: {Authorization: `Bearer ${token}`}
       });
+      
       if (response.data.success) {
         setInfoUser(null);
         setAuthentication(false);        
