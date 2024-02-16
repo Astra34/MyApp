@@ -26,7 +26,8 @@ function App() {
       try {
         const response = await axios.post(`${process.env.REACT_APP_API_URL}/check-auth`, null,{
           headers: {
-            Authorization: `Bearer ${token}`}
+            Authorization: token
+          }
         });
 
         setInfoUser(response.data.info);
@@ -91,10 +92,13 @@ function App() {
   const handleLogout = async () => {
     try {
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/Logout`, null,{
-        headers: {Authorization: `Bearer ${token}`}
+        headers: {
+          Authorization: token
+        }
       });
 
       if (response.data.success) {
+
         setInfoUser(null);
         setAuthentication(false);        
       }
