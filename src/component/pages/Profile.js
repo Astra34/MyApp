@@ -41,15 +41,15 @@ export default function Profil({ infoUser }) {
 
   return (
     <div className='boxProfil'>
-      <h1 className="titleProfil">Profil de : {inputValue.email}</h1>
+      <h1 className="titleProfil">Profil de : {inputValue.Email}</h1>
       <div className='infoProfil'>
         <>
           <label className='titleInfo'>Email</label>
-          <input type='text' name='email' value={inputValue.email} readOnly={!isEditable} onChange={handleChange} />
+          <input type='text' name='email' value={inputValue.Email} readOnly={!isEditable} onChange={handleChange} />
         </> 
         <>
           <label className='titleInfo'>Username</label>
-          <input type='text' name='username' value={inputValue.username} readOnly={!isEditable} onChange={handleChange} />
+          <input type='text' name='username' value={inputValue.User} readOnly={!isEditable} onChange={handleChange} />
         </>
         <button onClick={handleEdit}>{isEditable ? 'annuler' : 'Edit'}</button>
         {isEditable && (
