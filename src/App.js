@@ -66,10 +66,10 @@ function App() {
       if(endpoint === 'Login'){
         console.log(response.data)
         if (response.data.success) {
-         
+          console.log(response.data.Token)
           setShowPrompt(false);
           setToken(response.data.Token);
-
+          
           localStorage.setItem('token', token);
           setInfoUser(response.data.info);
           setAuthentication(response.data.success);
