@@ -68,7 +68,8 @@ function App() {
         if (response.data.success) {
          
           setShowPrompt(false);
-          setToken(response.data.token);
+          setToken(response.data.Token);
+
           localStorage.setItem('token', token);
           setInfoUser(response.data.info);
           setAuthentication(response.data.success);
@@ -92,7 +93,7 @@ function App() {
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/Logout`, null,{
         headers: {Authorization: `Bearer ${token}`}
       });
-      
+
       if (response.data.success) {
         setInfoUser(null);
         setAuthentication(false);        
