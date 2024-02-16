@@ -70,7 +70,7 @@ function App() {
           setShowPrompt(false);
           setToken(response.data.Token);
           
-          localStorage.setItem('token', token);
+          localStorage.setItem('token', response.data.Token);
           setInfoUser(response.data.info);
           setAuthentication(response.data.success);
           handleClear();
