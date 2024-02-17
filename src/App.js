@@ -95,9 +95,9 @@ function App() {
       });
 
       if (response.data.success) {
-        
         setInfoUser(null);
-        setAuthentication(false);        
+        setAuthentication(false); 
+        localStorage.removeItem('token');
       }
 
     } catch (err) {
