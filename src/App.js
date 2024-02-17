@@ -24,15 +24,13 @@ function App() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        if (token){
-          const response = await axios.post(`${process.env.REACT_APP_API_URL}/check-auth`, null,{
-            headers: {
-              Authorization:`Bearer ${token}`}
-          });
-          console.log(response.data)
-          setInfoUser(response.data.info);
-          setAuthentication(response.data.success);
-        }
+        const response = await axios.post(`${process.env.REACT_APP_API_URL}/check-auth`, null,{
+          headers: {
+            Authorization: `Bearer ${token}`}
+        });
+
+        setInfoUser(response.data.info);
+        setAuthentication(response.data.success);
       } catch (err) {
         setAuthentication(false);
       }
@@ -162,7 +160,7 @@ function App() {
       <Router>
         <Routes>
           <Route path = "/MyApp" element = {renderHomePage()} />
-          <Route path = "/profile" element = {renderProfilePage()} />
+          <Route path = "/MyApp/profile" element = {renderProfilePage()} />
           <Route path = "*" element={<Navigate to="/MyApp"/>} />
         </Routes>
       </Router>
