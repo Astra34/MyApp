@@ -29,7 +29,7 @@ export default function Nav({authentication, logout, onLogin, onSignup}) {
                     </>
                     <>  
                         <span className='icon profil'><BsPersonFill/></span>
-                        <button className='Nav-btn' onClick={() => navigate('/MyApp/profile')}>Profil</button>
+                        <button className='Nav-btn' onClick={() => navigate('/profile')}>Profil</button>
                     </>            
                     
                 </div>

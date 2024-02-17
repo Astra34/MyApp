@@ -162,7 +162,7 @@ function App() {
       <Router>
         <Routes>
           <Route path = "/MyApp" element = {renderHomePage()} />
-          <Route path = "/MyApp/profile" element = {renderProfilePage()} />
+          <Route path = "/profile" element = {renderProfilePage()} />
           <Route path = "*" element={<Navigate to="/MyApp"/>} />
         </Routes>
       </Router>
