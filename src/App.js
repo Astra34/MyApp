@@ -32,12 +32,12 @@ function App() {
 
     const checkAuth = async () => {
       try {
-        if (token){
+        if(token){
           const response = await axios.post(`${process.env.REACT_APP_API_URL}/check-auth`, null,{
             headers: {
-              Authorization:`Bearer ${token}`}
+              Authorization: `Bearer ${token}`}
           });
-          console.log(response.data)
+  
           setInfoUser(response.data.info);
           setAuthentication(response.data.success);
         }
@@ -105,9 +105,9 @@ function App() {
       });
 
       if (response.data.success) {
-        
         setInfoUser(null);
-        setAuthentication(false);        
+        setAuthentication(false); 
+        localStorage.removeItem('token');
       }
 
     } catch (err) {
