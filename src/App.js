@@ -22,6 +22,14 @@ function App() {
 
 
   useEffect(() => {
+    const interval = setInterval(async () => {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/status`);
+      if (response){
+        console.log('serv on')
+      }
+      return () => clearInterval(interval);
+    },5 * 60 * 1000)
+
     const checkAuth = async () => {
       try {
         if (token){
