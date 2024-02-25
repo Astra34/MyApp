@@ -2,7 +2,7 @@ My first app :[App Web](https://astra34.github.io/MyApp/).
 
 Note:
 
--if you don't create an account or log in, the server isn't turned on.
+-If you cannot create an account or log in, the server is not activated (wait 1 min).
 
 -The server used is the one on my other repository (App node), it is hosted thanks to render.
 
